@@ -78,6 +78,7 @@ func toInt(s string) (int, error) {
 }
 
 func (g *GameState) Run() {
+
 	for index, question := range g.Questions {
 		fmt.Printf("\033[33m %d. %s\033[33m\n", index+1, question.Text)
 		for j, option := range question.Options {
@@ -119,5 +120,11 @@ func main() {
 
 	game1.Run()
 
-	fmt.Printf("Você ganhou %d pontos!\n", game1.Points)
+	if game1.Points > 30 {
+		fmt.Printf("Parabéns! Você venceu o jogo!\n")
+	} else {
+		fmt.Printf("Desculpe! Você perdeu o jogo!\n")
+	}
+
+	fmt.Println("Saldo de pontos:", game1.Points)
 }
