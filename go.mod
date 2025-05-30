@@ -1,3 +1,3 @@
-module github.com/kelwinpin
+module github.com/kelwinpin/quizGO
 
 go 1.24.3
